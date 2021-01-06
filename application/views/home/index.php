@@ -10,9 +10,13 @@
         </div>
     </div>
     <!--Normale contenuto di pagina-->
-
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- Geolocation Javascript Library
+    <script src="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js"></script>
+    <script src="<?= base_url() ?>assets/js/locateControl.js"></script> -->
+
     <script src="<?= base_url() ?>assets/js/BootSideMenu.js"></script>
     <script src="<?= base_url() ?>assets/leaflet/leaflet.js"></script>
 
@@ -33,12 +37,9 @@
         // var kode = feature.properties.kode;
 
         $.getJSON(base_url + "home/tempat_json", function(data) {
-
             $.each(data, function(i, field) {
                 var v_lat = parseFloat(data[i].lat);
                 var v_long = parseFloat(data[i].lng);
-
-
                 tempatMarker = L.marker([v_long, v_lat])
                     .addTo(myFeatureGroup)
                     .bindPopup(
@@ -51,7 +52,6 @@
                         '<br>' + "<b>G. Bujur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>" + data[i].lat +
                         '<br>' + "<b>G. Lintang&emsp;&nbsp;: </b>" + data[i].lng +
                         '<br>' + "<b>Kecamatan &nbsp;&nbsp;: </b>" + data[i].kecamatan +
-                        '<br>' +
                         '<br>' + "<b>Gambar</b> &nbsp;" + "<img src='<?= base_url() ?>assets/upload/" + data[i].gambar + "' height='200px' weight='300px' />"
                     )
                 // .openPopup()
@@ -60,6 +60,8 @@
 
             });
         });
+        /* Control Locate */
+        // locateControl.addTo(map);
 
         function groupClick(event) {
             alert("Clicked on marker" + event.layer.id);

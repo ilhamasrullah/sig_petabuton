@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SIG</title>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <!-- Geolocation CSS Library
+    <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.css"> -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
     <!-- <link href="<?= base_url() ?>assets/css/BootSideMenu.css" rel="stylesheet"> -->
@@ -16,10 +18,9 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/tinymce/tinymce.min.js"></script>
-
     <link href="<?= base_url() ?>assets/leaflet/leaflet.css" rel="stylesheet">
-
-
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
     <style type="text/css">
         .user {
             padding: 5px;
@@ -57,15 +58,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="profil2">Home</a>
+                <a class="navbar-brand" href="profil">Home</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="admin"><span class="glyphicon glyphicon-map-marker"></span> Peta</a></li>
-                    <li><a href="jalan2"><span class="glyphicon glyphicon-road"></span> Daftar Kerusakan Jalan</a></li>
-                    <li><a href="password"><span class="glyphicon glyphicon-lock"></span> Password</a></li>
-                    <li><a href="<?php echo base_url('login/logout'); ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-                    <li><a href=""><span class="glyphicon glyphicon-user"></span> <?php echo $this->session->userdata("nama"); ?></a></li>
+                    <li><a href="home"><span class="glyphicon glyphicon-map-marker"></span> Peta</a></li>
+                    <li><a href="jalan"><span class="glyphicon glyphicon-road"></span> Daftar Kerusakan jalan</a></li>
+                    <li><a href="kontak"><span class="glyphicon glyphicon-envelope"></span> Kontak kami</a></li>
+                    <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                 </ul>
             </div>
         </div>
