@@ -15,6 +15,7 @@
                 <td>Status jalan</td>
                 <td>Kecamatan</td>
                 <td>Kerusakan</td>
+                <td>Tabel kerusakan</td>
                 <td>Penyebab</td>
                 <td>Kelurahan</td>
             </tr>
@@ -30,6 +31,7 @@
                 $status_jalan = $i['status_jalan'];
                 $kecamatan = $i['kecamatan'];
                 $kerusakan = $i['kerusakan'];
+                $tabel_presentasi = $i['tabel_presentasi'];
                 $penyebab = $i['penyebab'];
                 $kelurahan = $i['kelurahan'];
             ?>
@@ -42,6 +44,7 @@
                     <td><?php echo $status_jalan; ?> </td>
                     <td><?php echo $kecamatan; ?> </td>
                     <td><?php echo $kerusakan; ?> </td>
+                    <td><?php echo $tabel_presentasi; ?> </td>
                     <td><?php echo $penyebab; ?> </td>
                     <td><?php echo $kelurahan; ?> </td>
                 </tr>

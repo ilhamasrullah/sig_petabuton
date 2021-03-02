@@ -22,9 +22,8 @@ class m_jalan extends CI_Model
         } catch (Exception $e) {
         }
     }
-    public function hapus_tempat($where, $table)
+    public function Hapus($id_tempat)
     {
-        $this->db->where($where);
-        $this->db->delete($table);
+        $this->db->delete('tb_tempat', array('id_tempat' => $id_tempat));
     }
 }

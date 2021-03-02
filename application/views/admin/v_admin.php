@@ -51,7 +51,7 @@
                         '<br>' + "<b>G. Bujur&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>" + data[i].lat +
                         '<br>' + "<b>G. Lintang&emsp;&nbsp;: </b>" + data[i].lng +
                         '<br>' + "<b>Kecamatan &nbsp;&nbsp;: </b>" + data[i].kecamatan +
-                        '<br>' +
+
                         '<br>' + "<b>Gambar</b> &nbsp;" + "<img src='<?= base_url() ?>assets/upload/" + data[i].gambar + "' height='200px' weight='300px' />"
                     )
                 // .openPopup()

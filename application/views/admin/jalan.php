@@ -26,6 +26,7 @@
                 <td>Status jalan</td>
                 <td>Kecamatan</td>
                 <td>Kerusakan</td>
+                <td>Tabel kerusakan</td>
                 <td>Penyebab</td>
                 <td>Kelurahan</td>
                 <td>Aksi</td>
@@ -33,36 +34,42 @@
         </thead>
         <tbody>
             <?php
-            foreach ($data->result_array() as $i) :
-                $id_tempat = $i['id_tempat'];
-                $gambar = $i['gambar'];
-                $nama_jalan = $i['nama_jalan'];
-                $lat = $i['lat'];
-                $lng = $i['lng'];
-                $status_jalan = $i['status_jalan'];
-                $kecamatan = $i['kecamatan'];
-                $kerusakan = $i['kerusakan'];
-                $penyebab = $i['penyebab'];
-                $kelurahan = $i['kelurahan'];
+            foreach ($data->result_array() as $i) : {
+                    $id_tempat = $i['id_tempat'];
+                    $gambar = $i['gambar'];
+                    $nama_jalan = $i['nama_jalan'];
+                    $lat = $i['lat'];
+                    $lng = $i['lng'];
+                    $status_jalan = $i['status_jalan'];
+                    $kecamatan = $i['kecamatan'];
+                    $kerusakan = $i['kerusakan'];
+                    $tabel_presentasi = $i['tabel_presentasi'];
+                    $penyebab = $i['penyebab'];
+                    $kelurahan = $i['kelurahan'];
             ?>
-                <tr>
-                    <td><?php echo $id_tempat; ?> </td>
-                    <td><a href="assets/upload/<?php echo $i['gambar']; ?>"><img class="thumbnail" src="assets/upload/<?php echo $i['gambar']; ?>" height="80"></a></td>
-                    <td><?php echo $nama_jalan; ?> </td>
-                    <td><?php echo $lat; ?> </td>
-                    <td><?php echo $lng; ?> </td>
-                    <td><?php echo $status_jalan; ?> </td>
-                    <td><?php echo $kecamatan; ?> </td>
-                    <td><?php echo $kerusakan; ?> </td>
-                    <td><?php echo $penyebab; ?> </td>
-                    <td><?php echo $kelurahan; ?> </td>
-                    <td class="nw">
-                        <a class="btn btn-xs btn-warning" href="jalan"><span class="glyphicon glyphicon-edit"></span></a>
-                        <a class="btn btn-xs btn-danger" href="admin/hapus_tempat" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash"></span></a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td><?php echo $id_tempat; ?> </td>
+                        <td><a href="assets/upload/<?php echo $i['gambar']; ?>"><img class="thumbnail" src="assets/upload/<?php echo $i['gambar']; ?>" height="80"></a></td>
+                        <td><?php echo $nama_jalan; ?> </td>
+                        <td><?php echo $lat; ?> </td>
+                        <td><?php echo $lng; ?> </td>
+                        <td><?php echo $status_jalan; ?> </td>
+                        <td><?php echo $kecamatan; ?> </td>
+                        <td><?php echo $kerusakan; ?> </td>
+                        <td><?php echo $tabel_presentasi; ?> </td>
+                        <td><?php echo $penyebab; ?> </td>
+                        <td><?php echo $kelurahan; ?> </td>
+                        <td class="nw">
+                            <a class="btn btn-xs btn-warning" href="jalan2"><span class="glyphicon glyphicon-edit"></span></a>
+                            <!-- <a class="btn btn-xs btn-danger" href="<?php echo base_url() ?>admin/hapus/<?php echo $i->id_tempat; ?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash"></span></a> -->
+                            <a class="btn btn-xs btn-danger" href="<?php echo base_url() ?>admin/hapus/<?php echo $id_tempat; ?>" onclick="return confirm('Hapus data?')"> <span class="glyphicon glyphicon-trash"></span></a>
+                        </td>
+                    </tr>
 
-            <?php endforeach; ?>
+            <?php
+
+                }
+            endforeach; ?>
 
         </tbody>
 

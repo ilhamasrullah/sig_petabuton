@@ -50,10 +50,9 @@ class Admin extends CI_Controller
         // $this->load->view('home/jalan.php');
         $this->load->view('templates/auth_footer.php');
     }
-    public function hapus_tempat($id_tempat)
+    public function hapus($id_tempat)
     {
-        $where = array('id_tempat' => $id_tempat);
-        $this->m_jalan->hapus_tempat($where, 'nama_jalan');
+        $this->m_jalan->Hapus($id_tempat);
         redirect('jalan2');
     }
     public function tambah_data()
@@ -98,7 +97,7 @@ class Admin extends CI_Controller
 
             ];
             $this->m_jalan->tambah_data($data); //memasukan data ke database
-            redirect('admin'); //mengalihkan halaman
+            redirect('jalan2'); //mengalihkan halaman
 
         }
     }
